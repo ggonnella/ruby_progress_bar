@@ -19,3 +19,7 @@ bar = ProgressBar.new(100) # this outputs the scala and opens the bar
   bar.next # this will print a dot every 1/50 of the iterations 
 end
 bar.close # this closes the bar and prints a time benchmark
+
+=LICENSE
+
+This library is MIT-Licensed. 
