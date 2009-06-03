@@ -1,0 +1,21 @@
+If you have a console based ruby script which takes some time to execute and 
+you can calculate which portion of the execution is ready at a certain time, you 
+may use this library to give some feedback. 
+
+It will be applied for example to this very simple script:
+
+100.times do 
+  sleep 0.1 # let's pretend I'm doing something :)
+end
+
+Using ruby_progress_bar it becomes: 
+
+require "progress_bar.rb"
+# you must know the number of iterations to initialize the counter
+# in this case it's easy, it is 100:
+bar = ProgressBar.new(100) # this outputs the scala and opens the bar
+100.times do
+  sleep 0.1 # let's pretend I'm doing something :)
+  bar.next # this will print a dot every 1/50 of the iterations 
+end
+bar.close # this closes the bar and prints a time benchmark
